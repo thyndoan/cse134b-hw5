@@ -21,6 +21,12 @@ body {
   background: var(--color-primary);
   color: var(--color-text);
 
+  a {
+    color: var(--color-link);
+  }
+  a:visited {
+    color: var(--color-link-visited);
+  }
   > header {
     grid-area: header;
   }
@@ -30,9 +36,20 @@ body {
     border-inline-end: var(--border);
   }
 
+  > aside {
+    input[type="radio"],
+    label {
+      cursor: pointer;
+    }
+  }
+
   > main {
     grid-area: main;
     padding: var(--space-3);
+
+    h1 {
+      color: var(--color-accent);
+    }
   }
 
   > aside {

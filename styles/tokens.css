@@ -18,10 +18,20 @@
 /*Light mode*/
 @media (prefers-color-scheme: light) {
   :root {
-    --color-primary: #fdf4d1;
-    --color-accent: #d46d25;
+    --color-primary: #fffef8;
+    --color-accent: #c76119;
     --color-text: #30241d;
+    --color-link: #318aa0;
+    --color-link-visited: #a05dd6;
   }
+}
+
+:root[data-theme="light"] {
+  --color-primary: #fffef8;
+  --color-accent: #c76119;
+  --color-text: #30241d;
+  --color-link: #318aa0;
+  --color-link-visited: #a05dd6;
 }
 
 /*Dark mode*/
@@ -30,7 +40,16 @@
     --color-primary: #222831;
     --color-accent: #ff4d00;
     --color-text: #ffffff;
+    --color-link: #def8ff;
+    --color-link-visited: #ead0ff;
   }
+}
+:root[data-theme="dark"] {
+  --color-primary: #222831;
+  --color-accent: #ff4d00;
+  --color-text: #ffffff;
+  --color-link: #def8ff;
+  --color-link-visited: #ead0ff;
 }
 
 /*Theme picker is hidden by default*/
