@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="styles/site.css" />
     <link rel="stylesheet" href="styles/index.css" />
     <script src="js/index.js" defer></script>
+    <!--Add inline script to avoid the "flash"-->
+    <script>
+      try {
+        var theme = localStorage.getItem("theme");
+        if (theme == "light" || theme == "dark") {
+          document.documentElement.setAttribute("data-theme", theme);
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <header>
@@ -22,6 +31,7 @@
         height="20"
       /><a href="index.html">Thy Doan</a>
     </header>
+
     <nav>
       <ul>
         <li><a href="about.html">About</a></li>

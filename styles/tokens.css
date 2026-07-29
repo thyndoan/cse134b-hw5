@@ -1,5 +1,10 @@
 :root {
-  /*Baseline variables colors*/
+  /*Baseline variables colors. Fallback for old browsers that don't support data-theme or prefers-color-theme*/
+  --color-primary: #fffef8;
+  --color-accent: #c76119;
+  --color-text: #30241d;
+  --color-link: #318aa0;
+  --color-link-visited: #a05dd6;
 
   color-scheme: light dark;
 
