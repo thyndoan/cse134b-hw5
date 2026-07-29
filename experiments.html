@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thy Doan's portfolio website" />
+    <meta name="keywords" content="HTML" />
+    <title>Thy Doan - Portfolio</title>
+    <link rel="icon" type="image/png" href="imgs/kitty.png" />
+  </head>
+  <body>
+    <header>
+      <span id="logo"
+        ><svg width="20" height="20">
+          <circle cx="10" cy="10" r="10" fill="blue" /></svg
+        ><a href="index.html">Thy Doan</a></span
+      >
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="experiments.html">Experiments</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h1>Experiments</h1>
+      <section>
+        <h2>Audio</h2>
+        <p>A short recording of a cat purring</p>
+        <audio controls>
+          <source
+            src="files/catPurr.wav"
+            type="audio/wav"
+            title="A short recording of a cat purring"
+          />
+          Your browser does not support the audio element.
+        </audio>
+      </section>
+
+      <section>
+        <h2>Video</h2>
+        <p>A short recording of a cat cleaning itself</p>
+        <video controls width="640" height="360">
+          <source
+            src="files/catVideo.mp4"
+            type="video/mp4"
+            title="A short video of a cat cleaning itself"
+          />
+          Your browser does not support the video element.
+        </video>
+      </section>
+
+      <section>
+        <h2>Canvas</h2>
+        <canvas id="myCanvas" width="400" height="200"></canvas>
+        <script>
+          const draw = document.getElementById("myCanvas").getContext("2d");
+          draw.fillStyle = "gray";
+          draw.beginPath();
+          draw.arc(200, 100, 80, 0, Math.PI * 2);
+          draw.fill();
+        </script>
+      </section>
+
+      <math>
+        <mi>E</mi>
+        <mo>=</mo>
+        <mi>m</mi>
+        <msup>
+          <mi>c</mi>
+          <mn>2</mn>
+        </msup>
+      </math>
+
+      <section>
+        <h2>Template</h2>
+        <p>
+          There is a secret message below, but it's only visible if you view
+          page source
+        </p>
+        <template id="myTemplate">
+          <p>Nugget is a 3 years old cat that loves napping.</p>
+        </template>
+      </section>
+    </main>
+    <footer>
+      <hr />
+      <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
+    </footer>
+  </body>
+</html>

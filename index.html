@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thy Doan's portfolio website" />
+    <meta name="keywords" content="HTML" />
+    <title>Thy Doan - Portfolio</title>
+    <link rel="icon" type="image/png" href="imgs/kitty.png" />
+    <!-- Custom Element 1: semantic CSS for intro cards -->
+    <style>
+      intro-card {
+        display: inline-block;
+        border: 2px solid rgb(12, 58, 145);
+        border-radius: 10px;
+        padding: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <span id="logo"
+        ><svg width="20" height="20">
+          <circle cx="10" cy="10" r="10" fill="blue" /></svg
+        ><a href="index.html">Thy Doan</a></span
+      >
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="experiments.html">Experiments</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <h1>Hi, my name is Thy Doan</h1>
+        <picture>
+          <source srcset="imgs/thyProfile.webp" type="image/webp" />
+          <img
+            src="imgs/thyProfile.png"
+            alt="Portrait photo of Thy Doan"
+            height="300"
+          />
+        </picture>
+        <p>Thy Doan - Software Developer</p>
+        <intro-card>
+          <p>
+            I am a <strong>Computer Science student at UCSD</strong>. I enjoy
+            <i>crafting</i> since I was little, and I enjoy seeing things I make
+            come to life. I think coding is the <b>same</b> as crafting because
+            it allows me to express my creativity to others.
+          </p>
+          <p>I'm still figuring out and experimenting with new things.</p>
+        </intro-card>
+      </section>
+
+      <!--Custom Element #2: this element print "Hello World" to the browser console-->
+      <hello-world></hello-world>
+      <script>
+        customElements.define(
+          "hello-world",
+          class extends HTMLElement {
+            connectedCallback() {
+              console.log("Hello World");
+            }
+          },
+        );
+      </script>
+      <noscript>
+        <p>
+          JavaScript is disabled in your browser. Some features may not work,
+          but all content on this site works without it.
+        </p>
+      </noscript>
+    </main>
+    <footer>
+      <hr />
+      <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
+    </footer>
+  </body>
+</html>

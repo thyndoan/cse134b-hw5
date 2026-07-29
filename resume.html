@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Thy Doan's portfolio website" />
+    <meta name="keywords" content="HTML" />
+    <title>Thy Doan - Portfolio</title>
+    <link rel="icon" type="image/png" href="imgs/kitty.png" />
+  </head>
+  <body>
+    <header>
+      <span id="logo"
+        ><svg width="20" height="20">
+          <circle cx="10" cy="10" r="10" fill="blue" /></svg
+        ><a href="index.html">Thy Doan</a></span
+      >
+      <nav>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="experiments.html">Experiments</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Resume</h1>
+
+      <iframe
+        src="files/ThysResume.pdf"
+        title="Thy Doan's Resume"
+        width="1900"
+        height="600"
+      >
+      </iframe>
+
+      <noscript>
+        <p>
+          Your browser does not support iframes or your javascript is disabled.
+          You can download the resume
+          <a href="files/ThysResume.pdf">here</a>
+        </p>
+      </noscript>
+      <section id="skills">
+        <h2>Skills</h2>
+        <hr />
+
+        <p>
+          <label for="html-skill">HTML</label>
+          <progress id="html-skill" max="100" value="90"></progress>
+        </p>
+
+        <p>
+          <label for="css-skill">CSS</label>
+          <progress id="css-skill" max="100" value="75"></progress>
+        </p>
+
+        <p>
+          <label for="js-skill">JavaScript</label>
+          <progress id="js-skill" max="100" value="50"></progress>
+        </p>
+
+        <p>
+          <label for="java-skill">Java</label>
+          <progress id="java-skill" max="100" value="80"></progress>
+        </p>
+
+        <p>
+          <label for="py-skill">Python</label>
+          <progress id="py-skill" max="100" value="70"></progress>
+        </p>
+
+        <p>
+          <label for="C-C++-skill">C / C++</label>
+          <progress id="C-C++-skill" max="100" value="80"></progress>
+        </p>
+
+        <p>Frameworks: React</p>
+        <p>Tools: Git, VS Code, Linux</p>
+      </section>
+    </main>
+
+    <footer>
+      <hr />
+      <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
+    </footer>
+  </body>
+</html>
