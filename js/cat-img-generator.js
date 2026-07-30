@@ -1,6 +1,7 @@
 class CatWidget extends HTMLElement {
   constructor() {
     super();
+    this.setAttribute("state", "idle");
   }
 
   static get observedAttributes() {
@@ -24,6 +25,22 @@ class CatWidget extends HTMLElement {
     this.controller = new AbortController();
     const timeoutId = setTimeout(() => this.controller.abort(), 8000);
 
+    /* Add cache for every 10 minutes*/
+    const cacheKey = `cat-cache:${count}`;
+    const ttl = 10 * 60 * 1000;
+
+    try {
+      const cached = sessionStorage.getItem(cacheKey);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (Date.now() - parsed.timestamp < ttl) {
+          this.render(parsed.cats);
+          this.setAttribute("state", "success");
+          return;
+        }
+      }
+    } catch (e) {}
+
     fetch(`https://api.thecatapi.com/v1/images/search?limit=${count}`, {
       signal: this.controller.signal,
     })
@@ -37,6 +54,14 @@ class CatWidget extends HTMLElement {
       .then((cats) => {
         clearTimeout(timeoutId);
         const trimmed = cats.slice(0, count);
+
+        try {
+          sessionStorage.setItem(
+            cacheKey,
+            JSON.stringify({ cats: trimmed, timestamp: Date.now() }),
+          );
+        } catch (e) {}
+
         this.render(trimmed);
         this.setAttribute("state", "success");
       })
