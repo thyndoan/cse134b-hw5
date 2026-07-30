@@ -1,123 +1,50 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Thy Doan's portfolio website" />
-    <meta name="keywords" content="HTML" />
-    <title>Thy Doan - Portfolio</title>
-    <link rel="icon" type="image/png" href="imgs/kitty.png" />
-    <link rel="stylesheet" href="styles/tokens.css" />
-    <link rel="stylesheet" href="styles/site.css" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link rel="stylesheet" href="styles/form.css" />
-    <script src="js/index.js" defer></script>
-    <!--Add inline script to avoid the "flash"-->
-    <script>
-      try {
-        var theme = localStorage.getItem("theme");
-        if (theme == "light" || theme == "dark") {
-          document.documentElement.setAttribute("data-theme", theme);
-        }
-      } catch (e) {}
-    </script>
-  </head>
-  <body>
-    <header>
-      <img
-        id="logo"
-        src="imgs/sunflower.png"
-        alt="A cool sunflower wearing sun glasses logo"
-        width="20"
-        height="20"
-      /><a href="index.html">Thy Doan</a>
-    </header>
+---
+layout: layouts/base.njk
+title: Contact
+description: About Thy Doan - contact info
+---
 
-    <nav>
-      <ul>
-        <li><a href="about.html">About</a></li>
-        <li><a href="resume.html">Resume</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="cat-img-generator.html">Cat Images</a></li>
-      </ul>
-    </nav>
+<section class="intro">
+  <h1>Contact Me</h1>
+</section>
+<section>
+  <h2>Contact Form</h2>
+  <form class="contact-form">
+    <fieldset>
+      <legend>Leave me a message</legend>
 
-    <aside>
-      <noscript>
-        <p>
-          JavaScript is disabled in your browser. Some features may not work
-          (Theme picker requires Javascript), but all content on this site works
-          without it, and you are seeing a system theme.
-        </p>
-      </noscript>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
 
-      <form class="theme-picker" aria-label="Theme selection">
-        <fieldset>
-          <legend>Theme</legend>
-          <label>
-            <input type="radio" name="theme" value="light" /> Light
-          </label>
-          <label> <input type="radio" name="theme" value="dark" /> Dark </label>
-          <label
-            ><input type="radio" name="theme" value="auto" /> System
-            (auto)</label
-          >
-        </fieldset>
-      </form>
-    </aside>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
 
-    <main>
-      <section class="intro">
-        <h1>Contact Me</h1>
-      </section>
-      <section>
-        <h2>Contact Form</h2>
-        <form class="contact-form">
-          <fieldset>
-            <legend>Leave me a message</legend>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5"></textarea>
 
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" />
+      <!--remove type=submit for now-->
+      <button
+        type="button"
+        commandfor="confirmation-dialog"
+        command="show-modal"
+      >
+        Submit
+      </button>
+    </fieldset>
+  </form>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" />
+  <!--Add commandfor and command to simulate the dialog box after submit the form-->
+  <dialog id="confirmation-dialog">
+    <p>Thank you for your message! I will get back to you soon.</p>
+    <button commandfor="confirmation-dialog" command="close">Close</button>
+  </dialog>
+</section>
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" rows="5"></textarea>
-
-            <!--remove type=submit for now-->
-            <button
-              type="button"
-              commandfor="confirmation-dialog"
-              command="show-modal"
-            >
-              Submit
-            </button>
-          </fieldset>
-        </form>
-
-        <!--Add commandfor and command to simulate the dialog box after submit the form-->
-        <dialog id="confirmation-dialog">
-          <p>Thank you for your message! I will get back to you soon.</p>
-          <button commandfor="confirmation-dialog" command="close">
-            Close
-          </button>
-        </dialog>
-      </section>
-
-      <section>
-        <h2>Direct Contact</h2>
-        <p>Email: <a href="mailto:name@ucsd.edu">name@ucsd.edu</a></p>
-        <p>Phone: (###) 776-####</p>
-        <p>
-          <a href="https://www.linkedin.com/in/thy-doan-14ab34224/">LinkedIn</a>
-        </p>
-      </section>
-    </main>
-
-    <footer>
-      <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
-    </footer>
-  </body>
-</html>
+<section>
+  <h2>Direct Contact</h2>
+  <p>Email: <a href="mailto:name@ucsd.edu">name@ucsd.edu</a></p>
+  <p>Phone: (###) 776-####</p>
+  <p>
+    <a href="https://www.linkedin.com/in/thy-doan-14ab34224/">LinkedIn</a>
+  </p>
+</section>
