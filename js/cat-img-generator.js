@@ -9,11 +9,12 @@ class CatWidget extends HTMLElement {
   }
 
   connectedCallback() {
+    this.hasConnected = true;
     this.loadCats();
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
-    if (name == "count" && oldValue !== newValue) {
+    if (name == "count" && oldValue !== newValue && this.hasConnected) {
       this.loadCats();
     }
   }
