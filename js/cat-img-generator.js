@@ -1,6 +1,7 @@
 class CatWidget extends HTMLElement {
   constructor() {
     super();
+    this.setAttribute("state", "idle");
   }
 
   static get observedAttributes() {
