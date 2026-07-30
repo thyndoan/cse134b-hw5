@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Thy Doan's portfolio website" />
+    <meta name="description" content="Thy Doan's cat generator" />
     <meta name="keywords" content="HTML" />
-    <title>Thy Doan - Portfolio</title>
+    <title>Thy Doan - cat pictures generator</title>
     <link rel="icon" type="image/png" href="imgs/kitty.png" />
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/site.css" />
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/form.css" />
     <script src="js/index.js" defer></script>
+    <script src="js/cat-img-generator.js" defer></script>
     <!--Add inline script to avoid the "flash"-->
     <script>
       try {
@@ -68,27 +70,30 @@
 
     <main>
       <section class="intro">
-        <h1>Hi, my name is Thy Doan</h1>
-        <picture>
-          <source srcset="imgs/thyProfile.webp" type="image/webp" />
+        <h1>Cat Picture generator</h1>
+      </section>
+
+      <cat-widget count="3">
+        <figure class="fallback">
           <img
-            src="imgs/thyProfile.png"
-            alt="Portrait photo of Thy Doan"
+            src="imgs/cute-cat-sleeping.jpg"
+            alt="A sleeping tabby cat, since JavaScript is unavailable"
             width="300"
           />
-        </picture>
-        <p>Thy Doan - Software Developer</p>
-        <intro-card>
-          <p>
-            I am a <strong>Computer Science student at UCSD</strong>. I enjoy
-            <i>crafting</i> since I was little, and I enjoy seeing things I make
-            come to life. I think coding is the <b>same</b> as crafting because
-            it allows me to express my creativity to others.
-          </p>
-          <p>I'm still figuring out and experimenting with new things.</p>
-        </intro-card>
-      </section>
+          <figcaption>
+            Live cat pictures require JavaScript. But here is one cute cat
+            picture for you:
+          </figcaption>
+        </figure>
+        <ul class="cat-list" hidden></ul>
+        <template id="cat-item-template">
+          <li>
+            <img src="" alt="A random cat" />
+            <ul class="cat-list" hidden></ul>
+          </li> </template
+      ></cat-widget>
     </main>
+
     <footer>
       <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
     </footer>
