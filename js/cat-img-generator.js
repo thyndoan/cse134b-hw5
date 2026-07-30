@@ -3,20 +3,56 @@ class CatWidget extends HTMLElement {
     super();
   }
 
-  static get observedAttribute() {
+  static get observedAttributes() {
     return ["count"];
   }
 
   connectedCallback() {
-    this.setAttribute("state", "loading");
-    const count = this.getAttribute("count") || 3;
+    this.loadCats();
+  }
 
-    fetch(`https://api.thecatapi.com/v1/images/search?limit=${count}`)
-      .then((response) => response.json())
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name == "count" && oldValue !== newValue) {
+      this.loadCats();
+    }
+  }
+
+  loadCats() {
+    this.setAttribute("state", "loading");
+
+    const count = this.getAttribute("count") || 3;
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+    fetch(`https://api.thecatapi.com/v1/images/search?limit=${count}`, {
+      signal: controller.signal,
+    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Bad response from the server");
+        } else {
+          return response.json();
+        }
+      })
       .then((cats) => {
-        this.render(cats);
+        clearTimeout(timeoutId);
+        const trimmed = cats.slice(0, count);
+        this.render(trimmed);
         this.setAttribute("state", "success");
+      })
+      .catch(() => {
+        clearTimeout(timeoutId);
+        this.setAttribute("state", "error");
+        this.showError();
       });
+  }
+
+  showError() {
+    const caption = this.querySelector(".fallback figcaption");
+    if (caption) {
+      caption.textContent =
+        "Couldn't load cat pictures right now - here is one for you anyway";
+    }
   }
 
   render(cats) {
