@@ -45,10 +45,28 @@ body {
 
   > main {
     grid-area: main;
-    padding: var(--space-3);
+    padding: var(--space-2) var(--space-4);
 
     h1 {
       color: var(--color-accent);
+      align-items: center;
+    }
+
+    .intro {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    iframe {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 1900 / 1200;
+      height: auto;
     }
   }
 
