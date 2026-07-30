@@ -63,7 +63,10 @@ body {
       height: auto;
     }
     iframe {
+      width: 100%;
       max-width: 100%;
+      aspect-ratio: 1900 / 1200;
+      height: auto;
     }
   }
 

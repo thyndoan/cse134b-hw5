@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/tokens.css" />
     <link rel="stylesheet" href="styles/site.css" />
     <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/form.css" />
     <script src="js/index.js" defer></script>
     <!--Add inline script to avoid the "flash"-->
     <script>
@@ -84,13 +85,23 @@
             <label for="message">Message:</label>
             <textarea id="message" name="message" rows="5"></textarea>
 
-            <button type="submit">Submit</button>
+            <!--remove type=submit for now-->
+            <button
+              type="button"
+              commandfor="confirmation-dialog"
+              command="show-modal"
+            >
+              Submit
+            </button>
           </fieldset>
         </form>
 
-        <dialog id="confirmation-dialog" open>
+        <!--Add commandfor and command to simulate the dialog box after submit the form-->
+        <dialog id="confirmation-dialog">
           <p>Thank you for your message! I will get back to you soon.</p>
-          <button id="close-dialog">Close</button>
+          <button commandfor="confirmation-dialog" command="close">
+            Close
+          </button>
         </dialog>
       </section>
 
@@ -105,7 +116,6 @@
     </main>
 
     <footer>
-      <hr />
       <p>This page was made with &hearts; by Thy Doan - &copy; 2026</p>
     </footer>
   </body>
