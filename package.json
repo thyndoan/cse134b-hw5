@@ -1,0 +1,25 @@
+{
+  "name": "cse134b-hw5",
+  "version": "1.0.0",
+  "description": "A personal portfolio site built with Eleventy",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thyndoan/cse134b-hw5.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/thyndoan/cse134b-hw5/issues"
+  },
+  "homepage": "https://github.com/thyndoan/cse134b-hw5#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

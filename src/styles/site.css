@@ -1,0 +1,40 @@
+/* Shared chrome: header, nav, footer, view transitions*/
+
+@layer chrome {
+  header {
+    padding: var(--space-2) var(--space-3);
+    border-block-end: var(--border);
+    background: var(--color-primary);
+    h1 {
+      margin: 0;
+    }
+    #logo {
+      float: left;
+      margin-inline-end: var(--space-2);
+    }
+  }
+  nav {
+    padding: var(--space-2);
+    background: var(--color-primary);
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+  }
+  footer {
+    padding: var(--space-2) var(--space-3);
+    border-block-start: var(--border);
+    background: var(--color-primary);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+}

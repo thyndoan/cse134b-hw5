@@ -1,8 +1,0 @@
-cat-widget[state="loading"]::before {
-  content: "Loading cats photos…";
-  display: block;
-}
-
-cat-widget[state="error"] .fallback figcaption {
-  color: var(--color-accent);
-}
