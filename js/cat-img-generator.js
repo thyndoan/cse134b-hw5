@@ -21,11 +21,11 @@ class CatWidget extends HTMLElement {
     this.setAttribute("state", "loading");
 
     const count = this.getAttribute("count") || 3;
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 8000);
+    this.controller = new AbortController();
+    const timeoutId = setTimeout(() => this.controller.abort(), 8000);
 
     fetch(`https://api.thecatapi.com/v1/images/search?limit=${count}`, {
-      signal: controller.signal,
+      signal: this.controller.signal,
     })
       .then((response) => {
         if (!response.ok) {
@@ -68,6 +68,10 @@ class CatWidget extends HTMLElement {
     this.querySelector(".fallback").hidden = true;
   }
 
-  disconnectedCallback() {}
+  disconnectedCallback() {
+    if (this.controller) {
+      this.controller.abort();
+    }
+  }
 }
 customElements.define("cat-widget", CatWidget);
