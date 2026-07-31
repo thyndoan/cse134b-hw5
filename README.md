@@ -2,6 +2,9 @@
 
 ## Part 1:
 
+- [Github deploy - portfolio](https://thyndoan.github.io/cse134b-hw5/)
+- [Cloudflare deploy - generated sites](https://cse134b-hw5.tndoan.workers.dev/)
+
 I chose **option A**: theme picker.
 
 The issue was the flash of incorrect theme. This happens because the browser paints the page using CSS default (system) theme as soon as the HTML/CSS is ready and before the script runs. When the deferred script run, if it finds the theme inside localStorage different, it will apply that theme, which cause the "flash" switching from the system theme to the saved override.
