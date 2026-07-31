@@ -35,3 +35,29 @@ try/catch.
 ```html
 <cat-widget count="3"></cat-widget>
 ```
+
+### For CloudFlare local setup
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run a local dev server (rebuilds on change):
+
+```bash
+npm run start
+```
+
+3. Build the static site:
+
+```bash
+npm run build
+```
+
+Put input inside `src/`. Output is generated into `_site/`.
+
+## Reflection on SSG
+
+Personally, I think it's quite hard to use SSG. I chose to use eleventy to generate 3 project sites and a 404 site from a single base layout and a data file. The conversion remove the repeated boilerplate - same header, footer, base layout with all the meta tag, so we don't need to copy paste it to every pages. It's good to use if we have multiple pages with the same layout. I would not use this if I need to build only 1 page, and if my page is rarely have any data update.
