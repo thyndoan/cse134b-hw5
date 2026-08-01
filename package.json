@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/thyndoan/cse134b-hw5/issues"
   },
-  "homepage": "https://github.com/thyndoan/cse134b-hw5#readme"
+  "homepage": "https://github.com/thyndoan/cse134b-hw5#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
 }
