@@ -1,0 +1,8 @@
+name = "cse134b-hw5"
+compatibility_date = "2024-01-01"
+
+[build]
+command = "npm run build"
+
+[site]
+bucket = "_site"
