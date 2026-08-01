@@ -23,21 +23,9 @@ description: About Thy Doan - contact info
       <textarea id="message" name="message" rows="5"></textarea>
 
       <!--remove type=submit for now-->
-      <button
-        type="button"
-        commandfor="confirmation-dialog"
-        command="show-modal"
-      >
-        Submit
-      </button>
+      <button>Submit</button>
     </fieldset>
   </form>
-
-  <!--Add commandfor and command to simulate the dialog box after submit the form-->
-  <dialog id="confirmation-dialog">
-    <p>Thank you for your message! I will get back to you soon.</p>
-    <button commandfor="confirmation-dialog" command="close">Close</button>
-  </dialog>
 </section>
 
 <section>
