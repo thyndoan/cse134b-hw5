@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+title: Cat img generator
+description: Cat img generator using thecatapi
+---
+
+<section class="intro">
+  <h1>Cat Picture generator</h1>
+  <p class="attribution">
+    Cat photos provided by
+    <a href="https://thecatapi.com" target="_blank" rel="noopener noreferrer"
+      >The Cat API</a
+    >.
+  </p>
+</section>
+
+<cat-widget count="3">
+  <figure class="fallback">
+    <img
+      src="/imgs/cute-cat-sleeping.jpg"
+      alt="A sleeping tabby cat, since JavaScript is unavailable"
+      width="300"
+    />
+    <figcaption>
+      Live cat pictures require JavaScript. But here is one cute cat picture for
+      you
+    </figcaption>
+  </figure>
+  <ul class="cat-list" hidden></ul>
+  <template id="cat-item-template">
+    <li>
+      <img src="" alt="A random cat" />
+    </li> </template
+></cat-widget>
