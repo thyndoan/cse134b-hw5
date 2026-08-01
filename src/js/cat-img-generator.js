@@ -84,7 +84,7 @@ class CatWidget extends HTMLElement {
   render(cats) {
     const list = this.querySelector(".cat-list");
     const template = this.querySelector("#cat-item-template");
-    list.innerHTML = "";
+    list.replaceChildren();
     cats.forEach((cat) => {
       const clone = template.content.cloneNode(true);
       clone.querySelector("img").src = cat.url;
